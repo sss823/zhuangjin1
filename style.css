@@ -1,0 +1,101 @@
+/* 全局样式补充 */
+body {
+    scroll-behavior: smooth;
+}
+/* 通用图片自适应样式 */
+img {
+    max-width: 100%; /* 图片最大宽度不超过容器 */
+    height: auto;    /* 高度自动计算，保持比例 */
+    object-fit: cover; /* 图片裁剪填充容器（不拉伸） */
+}
+
+/* 图库作品图片专用样式 */
+.gallery-item img {
+    width: 100%;     /* 宽度充满容器 */
+    height: 300px;   /* 固定高度（可根据设计调整） */
+    object-fit: cover; /* 裁剪多余部分，保留中心区域 */
+}
+
+/* 模态框图片样式 */
+#modal-image {
+    max-height: 500px; /* 限制最大高度，避免超出屏幕 */
+    object-fit: contain; /* 完整显示图片，不裁剪（适合详情图） */
+}
+
+/* 背景图样式（如横幅） */
+.bg-image {
+    background-size: cover; /* 背景图覆盖容器 */
+    background-position: center; /* 背景图居中显示 */
+    background-repeat: no-repeat; /* 不重复平铺 */
+}
+    
+/* 自定义动画 */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* 导航栏滚动效果 */
+.header-scrolled {
+    py-2;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* 图库项目样式 */
+.gallery-item {
+    transition: all 0.3s ease;
+}
+
+/* 模态框动画 */
+#作品详情模态框 .bg-white {
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+/* FAQ折叠面板样式 */
+.faq-toggle.active i {
+    transform: rotate(180deg);
+}
+
+/* 按钮悬停效果增强 */
+.btn-primary {
+    @apply bg-primary text-white font-medium py-2 px-6 rounded-lg transition-all duration-300;
+}
+
+.btn-primary:hover {
+    @apply bg-primary/90 transform scale-105;
+}
+
+/* 图片加载过渡 */
+img {
+    transition: opacity 0.3s ease;
+}
+
+img.loading {
+    opacity: 0.5;
+}
+
+/* 页面内容容器 */
+.page-container {
+    min-height: calc(100vh - 120px);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .mobile-hidden {
+        display: none;
+    }
+}
+/* 箭头旋转过渡 */
+.fa-chevron-down {
+    transition: transform 0.3s ease;
+}
+/* 答案内容显示过渡 */
+.faq-content {
+    transition: all 0.3s ease;
+}

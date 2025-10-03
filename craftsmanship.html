@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>壮锦工艺 - 壮族传统织锦艺术</title>
+    <!-- 引入Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- 自定义Tailwind配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#A62928',     // 壮锦常用的红色
+                        secondary: '#E6B85C',   // 壮锦常用的金色
+                        accent: '#2D5D7B',      // 壮锦常用的蓝色
+                        neutral: '#F5F0E8',     // 米白色背景
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-neutral text-gray-800 font-sans">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-md transition-all duration-300">
+        <div class="container mx-auto px-4 py-3">
+            <nav class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-2">
+                                       <span class="text-xl font-bold text-primary">壮锦芳华</span>
+                </a>
+                
+                <!-- 桌面导航 -->
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="index.html" class="font-medium hover:text-primary transition-colors">首页</a></li>
+                    <li><a href="about.html" class="font-medium hover:text-primary transition-colors">关于壮锦</a></li>
+                    <li><a href="craftsmanship.html" class="font-medium text-primary hover:text-accent transition-colors">工艺展示<a href="craftsmanship.html" class="font-medium text-primary hover:text-accent transition-colors">工艺展示</a></li>
+                    <li><a href="patterns.html" class="font-medium hover:text-primary transition-colors">图案寓意</a></li>
+                    <li><a href="gallery.html" class="font-medium hover:text-primary transition-colors">作品图库</a></li>
+                    <li><a href="contact.html" class="font-medium hover:text-primary transition-colors">联系我们</a></li>
+                </ul>
+                
+                <!-- 移动端菜单按钮 -->
+                <button id="menuToggle" class="md:hidden text-gray-700 focus:outline-none">
+                    <i class="fa fa-bars text-2xl"></i>
+                </button>
+            </nav>
+            
+            <!-- 移动端导航菜单 -->
+            <div id="mobileMenu" class="md:hidden hidden mt-4 pb-2">
+                <ul class="space-y-3">
+                    <li><a href="index.html" class="block font-medium hover:text-primary transition-colors">首页</a></li>
+                    <li><a href="about.html" class="block font-medium hover:text-primary transition-colors">关于壮锦</a></li>
+                    <li><a href="craftsmanship.html" class="block font-medium text-primary hover:text-accent transition-colors">工艺展示</a></li>
+                    <li><a href="patterns.html" class="block font-medium hover:text-primary transition-colors">图案寓意</a></li>
+                    <li><a href="gallery.html" class="block font-medium hover:text-primary transition-colors">作品图库</a></li>
+                    <li><a href="contact.html" class="block font-medium hover:text-primary transition-colors">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 页面标题区域 -->
+        <section class="relative py-20 bg-gray-800 text-white">
+            <div class="absolute inset-0 opacity-30">
+                <img 
+                    src="images/微信图片28.jpg"
+                    alt="壮锦工艺背景" 
+                    class="w-full h-full object-cover"
+                />
+                <!-- 上面是工艺页面的背景图片，可替换为展示壮锦工艺的图片 -->
+            </div>
+            <div class="container mx-auto px-4 relative z-10">
+                <h1 class="text-[clamp(2rem,5vw,3rem)] font-bold mb-4">壮锦工艺展示</h1>
+                <p class="text-lg opacity-90 max-w-3xl">探索壮锦复杂精细的制作工艺，感受传统手工艺的魅力</p>
+            </div>
+        </section>
+
+        <!-- 工艺概述 -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-gray-800">壮锦工艺概述</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mt-4"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold text-primary mb-4">精湛的传统织造技艺</h3>
+                        <p class="text-gray-700 mb-6 leading-relaxed">
+                            壮锦的制作是一项复杂精细的手工艺，从原料准备到成品完成，需要经过多道工序，每一步都需要匠人的精心操作和丰富经验。
+                        </p>
+                        <p class="text-gray-700 mb-6 leading-relaxed">
+                            传统壮锦采用壮族特制的腰机进行织造，这种织机结构简单但功能完备，全部由手工操作，对织工的技术要求极高。一件精美的壮锦作品，往往需要数周甚至数月的时间才能完成。
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            壮锦的织造工艺以"通经断纬"为主要特点，这种技法能使织物呈现出丰富的色彩和复杂的图案，是中国传统织造技艺的瑰宝。
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <img 
+                            src="images/微信图片10.jpg"
+                            alt="壮锦织机" 
+                            class="w-full h-auto rounded-lg shadow-xl"
+                        />
+                        <!-- 上面是壮锦织机图片，可替换为展示壮锦织机的图片 -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 制作流程 -->
+        <section class="py-20 bg-neutral">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-gray-800">壮锦制作流程</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mt-4"></div>
+                    <p class="mt-6 text-gray-600 max-w-3xl mx-auto">
+                        壮锦的制作需要经过多个精细步骤，每一步都凝聚着匠人的心血与智慧
+                    </p>
+                </div>
+                
+                <div class="relative">
+                    <!-- 流程时间线 -->
+                    <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-primary/30 transform -translate-x-1/2"></div>
+                    
+                    <div class="space-y-16 relative">
+                        <!-- 步骤1 -->
+                        <div class="md:flex items-center">
+                            <div class="md:w-1/2 md:pr-12 md:text-right mb-8 md:mb-0">
+                                <h3 class="text-2xl font-bold text-primary mb-3">原料准备</h3>
+                                <p class="text-gray-700 leading-relaxed">
+                                    壮锦的主要原料是棉纱和丝线。首先需要将棉花纺成棉纱，作为经线；同时准备各种颜色的丝线，作为纬线。传统上使用天然染料染色，如用茜草染红色，栀子染黄色，蓝草染蓝色等。
+                                </p>
+                            </div>
+                            
+                            <div class="hidden md:block absolute left-1/2 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center transform -translate-x-1/2 z-10">
+                                1
+                            </div>
+                            
+                            <div class="md:w-1/2 md:pl-12">
+                                <img 
+                                    src="images/微信图片14.jpg"
+                                    alt="壮锦制作步骤1：原料准备" 
+                                    class="w-full h-auto rounded-lg shadow-lg"
+                                />
+                                <!-- 上面是原料准备步骤图片，可替换为实际的步骤图片 -->
+                            </div>
+                        </div>
+                        
+                        <!-- 步骤2 -->
+                        <div class="md:flex items-center">
+                            <div class="md:w-1/2 md:pr-12 md:order-1 order-2">
+                                <img 
+                                    src="images/微信图片15.jpg"
+                                    alt="壮锦制作步骤2：牵经" 
+                                    class="w-full h-auto rounded-lg shadow-lg"
+                                />
+                                <!-- 上面是牵经步骤图片，可替换为实际的步骤图片 -->
+                            </div>
+                            
+                            <div class="hidden md:block absolute left-1/2 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center transform -translate-x-1/2 z-10">
+                                2
+                            </div>
+                            
+                            <div class="md:w-1/2 md:pl-12 md:text-left mb-8 md:mb-0 md:order-2 order-1">
+                                <h3 class="text-2xl font-bold text-primary mb-3">牵经与卷经</h3>
+                                <p class="text-gray-700 leading-relaxed">
+                                    根据设计的尺寸和花型，将棉纱按照一定的数量和长度牵成经线，然后卷在织机的卷轴上。这一步需要保证经线的均匀和张力的适中，是后续织造的基础。
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- 步骤3 -->
+                        <div class="md:flex items-center">
+                            <div class="md:w-1/2 md:pr-12 md:text-right mb-8 md:mb-0">
+                                <h3 class="text-2xl font-bold text-primary mb-3">穿综与穿筘</h3>
+                                <p class="text-gray-700 leading-relaxed">
+                                    将经线按照一定的规律穿过综片和筘，这一步决定了织物的组织结构。穿综穿筘的工艺非常复杂，需要织工熟悉花型结构，操作精细。
+                                </p>
+                            </div>
+                            
+                            <div class="hidden md:block absolute left-1/2 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center transform -translate-x-1/2 z-10">
+                                3
+                            </div>
+                            
+                            <div class="md:w-1/2 md:pl-12">
+                                <img 
+                                    src="images/微信图片16.jpg"
+                                    alt="壮锦制作步骤3：穿综与穿筘" 
+                                    class="w-full h-auto rounded-lg shadow-lg"
+                                />
+                                <!-- 上面是穿综与穿筘步骤图片，可替换为实际的步骤图片 -->
+                            </div>
+                        </div>
+                        
+                        <!-- 步骤4 -->
+                        <div class="md:flex items-center">
+                            <div class="md:w-1/2 md:pr-12 md:order-1 order-2">
+                                <img 
+                                    src="images/微信图片17.jpg"
+                                    alt="壮锦制作步骤4：提花织造" 
+                                    class="w-full h-auto rounded-lg shadow-lg"
+                                />
+                                <!-- 上面是提花织造步骤图片，可替换为实际的步骤图片 -->
+                            </div>
+                            
+                            <div class="hidden md:block absolute left-1/2 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center transform -translate-x-1/2 z-10">
+                                4
+                            </div>
+                            
+                            <div class="md:w-1/2 md:pl-12 md:text-left mb-8 md:mb-0 md:order-2 order-1">
+                                <h3 class="text-2xl font-bold text-primary mb-3">提花织造</h3>
+                                <p class="text-gray-700 leading-relaxed">
+                                    这是壮锦制作最关键的步骤。织工坐在织机前，一边用脚踏控制综片开合，形成织口，一边用竹制的挑花杆提起部分经线，同时将彩色纬线穿过织口，用打纬刀打紧。整个过程全凭手工操作和记忆，对织工的技术要求极高。
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- 步骤5 -->
+                        <div class="md:flex items-center">
+                            <div class="md:w-1/2 md:pr-12 md:text-right mb-8 md:mb-0">
+                                <h3 class="text-2xl font-bold text-primary mb-3">整理与成品</h3>
+                                <p class="text-gray-700 leading-relaxed">
+                                    织好的壮锦需要经过整理、剪裁、缝制等工序，才能成为最终的成品。根据不同的用途，还可能进行进一步的加工，如制作被面、壁挂、服装等。
+                                </p>
+                            </div>
+                            
+                            <div class="hidden md:block absolute left-1/2 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center transform -translate-x-1/2 z-10">
+                                5
+                            </div>
+                            
+                            <div class="md:w-1/2 md:pl-12">
+                                <img 
+                                    src="images/微信图片18.jpg"
+                                    alt="壮锦制作步骤5：整理与成品" 
+                                    class="w-full h-auto rounded-lg shadow-lg"
+                                />
+                                <!-- 上面是整理与成品步骤图片，可替换为实际的步骤图片 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 工具展示 -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-gray-800">壮锦制作工具</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mt-4"></div>
+                    <p class="mt-6 text-gray-600 max-w-3xl mx-auto">
+                        传统壮锦的制作需要多种特制工具，每一种工具都有其独特的功能
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- 工具1 -->
+                    <div class="bg-neutral rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                        <img 
+                            src="images/微信图片12.jpg"
+                            alt="壮锦工具：腰机" 
+                            class="w-full h-56 object-cover object-center"
+                        />
+                        <!-- 上面是腰机工具图片，可替换为实际的工具图片 -->
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">腰机</h3>
+                            <p class="text-gray-600">
+                                壮锦织造的主要设备，结构简单，由机架、卷轴、踏板等部分组成。织工将织机系在腰间操作，因此得名"腰机"。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 工具2 -->
+                    <div class="bg-neutral rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                        <img 
+                            src="images/微信图片11.jpg"
+                            alt="壮锦工具：挑花杆" 
+                            class="w-full h-56 object-cover object-center"
+                        />
+                        <!-- 上面是挑花杆工具图片，可替换为实际的工具图片 -->
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">挑花杆</h3>
+                            <p class="text-gray-600">
+                                竹制工具，用于提起部分经线以形成图案。不同的图案需要不同数量的挑花杆，复杂的图案可能需要数十根。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 工具3 -->
+                    <div class="bg-neutral rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                        <img 
+                            src="images/微信图片13.jpg"
+                            alt="壮锦工具：打纬刀" 
+                            class="w-full h-56 object-cover object-center"
+                        />
+                        <!-- 上面是打纬刀工具图片，可替换为实际的工具图片 -->
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">打纬刀</h3>
+                            <p class="text-gray-600">
+                                通常由硬木制成，用于将纬线打紧，使织物结构紧密。打纬的力度均匀与否直接影响壮锦的质量。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 工具4 -->
+                    <div class="bg-neutral rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                        <img 
+                            src="images/微信图片19.jpg"
+                            alt="壮锦工具：梭子" 
+                            class="w-full h-56 object-cover object-center"
+                        />
+                        <!-- 上面是梭子工具图片，可替换为实际的工具图片 -->
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">梭子</h3>
+                            <p class="text-gray-600">
+                                用于牵引纬线穿过经线形成的织口。壮锦织造中通常需要多个梭子，每个梭子装有不同颜色的丝线。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 工具5 -->
+                    <div class="bg-neutral rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                        <img 
+                            src="images/微信图片20.jpg"
+                            alt="壮锦工具：综片" 
+                            class="w-full h-56 object-cover object-center"
+                        />
+                        <!-- 上面是综片工具图片，可替换为实际的工具图片 -->
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">综片</h3>
+                            <p class="text-gray-600">
+                                由竹条和线绳组成，用于控制经线的升降。通过脚踏控制不同的综片组合，可以形成不同的织物组织结构。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 工具6 -->
+                    <div class="bg-neutral rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                        <img 
+                            src="images/微信图片21.jpg"
+                            alt="壮锦工具：筘" 
+                            class="w-full h-56 object-cover object-center"
+                        />
+                        <!-- 上面是筘工具图片，可替换为实际的工具图片 -->
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">筘</h3>
+                            <p class="text-gray-600">
+                                由竹片制成，用于确定经线的密度和宽度，同时也起到打纬的辅助作用。筘的密度决定了织物的精细程度。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 工艺视频 -->
+        <section class="py-20 bg-accent text-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold">壮锦工艺视频演示</h2>
+                    <div class="w-24 h-1 bg-secondary mx-auto mt-4"></div>
+                    <p class="mt-6 opacity-90 max-w-3xl mx-auto">
+                        观看壮锦大师演示传统织造技艺，感受千年工艺的魅力
+                    </p>
+                </div>
+                
+                <div class="max-w-4xl mx-auto bg-gray-900 rounded-xl overflow-hidden shadow-2xl">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <video 
+                            controls 
+                            poster="images/微信图片38.jpg"
+                            class="w-full h-auto"
+                        >
+                            <!-- 视频封面图："images/微信图片38.jpg" 可替换 -->
+                            <source src="videos1/zhuangjin222.mp4">
+                            <!-- 上面是壮锦工艺演示视频，可替换为实际的工艺演示视频 -->
+                            您的浏览器不支持视频播放
+                        </video>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">壮锦大师演示传统织造技艺</h3>
+                        <p class="opacity-90">
+                            这段视频记录了非物质文化遗产传承人演示壮锦织造的关键步骤，包括提花、引纬、打纬等工艺，展示了传统手工艺的精湛与复杂。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <img src="images/微信图片3.jpg" alt="壮锦标志" class="h-8 w-auto" />
+                        <!-- 上面是页脚标志图片，可替换为白色版本的标志 -->
+                        <span class="text-xl font-bold">壮锦艺术</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        传承千年的壮族织锦艺术，展现民族文化瑰宝的独特魅力。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-weixin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-weibo text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-youtube-play text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">快速链接</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">首页</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">关于壮锦</a></li>
+                        <li><a href="craftsmanship.html" class="text-gray-400 hover:text-white transition-colors">工艺展示</a></li>
+                        <li><a href="patterns.html" class="text-gray-400 hover:text-white transition-colors">图案寓意</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-white transition-colors">作品图库</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">联系我们</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">相关资源</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">壮锦文化研究</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">非遗保护项目</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">传承人介绍</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">学习课程</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">购买渠道</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">联系我们</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker mt-1 mr-3 text-gray-400"></i>
+                            <span class="text-gray-400">黑龙江省牡丹江市爱民区黄花街道文化街191号牡丹江师范学院</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-phone mr-3 text-gray-400"></i>
+                            <span class="text-gray-400">+86 18038001903</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-envelope mr-3 text-gray-400"></i>
+                            <span class="text-gray-400">1757493474@qq.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 传承民族文化，保护非物质文化遗产</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

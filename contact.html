@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - 壮锦艺术文化网</title>
+    <!-- 引入Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- 自定义Tailwind配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#A62928',     // 壮锦常用的红色
+                        secondary: '#E6B85C',   // 壮锦常用的金色
+                        accent: '#2D5D7B',      // 壮锦常用的蓝色
+                        neutral: '#F5F0E8',     // 米白色背景
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-neutral text-gray-800 font-sans">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-md transition-all duration-300">
+        <div class="container mx-auto px-4 py-3">
+            <nav class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-2">
+                                       <span class="text-xl font-bold text-primary">壮锦芳华</span>
+                </a>
+                
+                <!-- 桌面导航 -->
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="index.html" class="font-medium hover:text-primary transition-colors">首页</a></li>
+                    <li><a href="about.html" class="font-medium hover:text-primary transition-colors">关于壮锦</a></li>
+                    <li><a href="craftsmanship.html" class="font-medium hover:text-primary transition-colors">工艺展示</a></li>
+                    <li><a href="patterns.html" class="font-medium hover:text-primary transition-colors">图案寓意</a></li>
+                    <li><a href="gallery.html" class="font-medium hover:text-primary transition-colors">作品图库</a></li>
+                    <li><a href="contact.html" class="font-medium text-primary hover:text-accent transition-colors">联系我们</a></li>
+                </ul>
+                
+                <!-- 移动端菜单按钮 -->
+                <button id="menuToggle" class="md:hidden text-gray-700 focus:outline-none">
+                    <i class="fa fa-bars text-2xl"></i>
+                </button>
+            </nav>
+            
+            <!-- 移动端导航菜单 -->
+            <div id="mobileMenu" class="md:hidden hidden mt-4 pb-2">
+                <ul class="space-y-3">
+                    <li><a href="index.html" class="block font-medium hover:text-primary transition-colors">首页</a></li>
+                    <li><a href="about.html" class="block font-medium hover:text-primary transition-colors">关于壮锦</a></li>
+                    <li><a href="craftsmanship.html" class="block font-medium hover:text-primary transition-colors">工艺展示</a></li>
+                    <li><a href="patterns.html" class="block font-medium hover:text-primary transition-colors">图案寓意</a></li>
+                    <li><a href="gallery.html" class="block font-medium hover:text-primary transition-colors">作品图库</a></li>
+                    <li><a href="contact.html" class="block font-medium text-primary hover:text-accent transition-colors">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 页面标题区域 -->
+        <section class="relative py-20 bg-gray-800 text-white">
+            <div class="absolute inset-0 opacity-30">
+                <img 
+                    src="images/微信图片36.jpg"
+                    alt="联系我们背景" 
+                    class="w-full h-full object-cover"
+                />
+                <!-- 上面是联系我们页面的背景图片，可替换为相关图片 -->
+            </div>
+            <div class="container mx-auto px-4 relative z-10">
+                <h1 class="text-[clamp(2rem,5vw,3rem)] font-bold mb-4">联系我们</h1>
+                <p class="text-lg opacity-90 max-w-3xl">如有任何问题或需求，请随时与我们联系</p>
+            </div>
+        </section>
+
+        <!-- 联系信息和表单 -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <!-- 主网格容器：控制联系信息和（地图+表单）的布局 -->
+                <div class="grid md:grid-cols-2 gap-12 items-start">
+                    <!-- 左侧：联系信息 -->
+                    <div>
+                        <h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold text-gray-800 mb-8">联系方式</h2>
+                        
+                        <div class="space-y-8">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fa fa-map-marker text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold mb-1">地址</h3>
+                                    <p class="text-gray-600">黑龙江省牡丹江市爱民区黄花街道文化街191号牡丹江师范学院</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fa fa-phone text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold mb-1">电话</h3>
+                                    <p class="text-gray-600">+86 18038001903</p>
+                                    <p class="text-gray-600">+86 771-1234568</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fa fa-envelope text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold mb-1">邮箱</h3>
+                                    <p class="text-gray-600">1757493474@qq.com</p>
+                                    <p class="text-gray-600">285213475@qq.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fa fa-clock-o text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold mb-1">营业时间</h3>
+                                    <p class="text-gray-600">周二至周日: 9:00 - 17:00</p>
+                                    <p class="text-gray-600">周一: 休息</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-12">
+                            <h3 class="text-lg font-bold mb-4">关注我们</h3>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 bg-[#07C160] text-white rounded-full flex items-center justify-center hover:opacity-90 transition-opacity">
+                                    <i class="fa fa-weixin"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-[#E6162D] text-white rounded-full flex items-center justify-center hover:opacity-90 transition-opacity">
+                                    <i class="fa fa-weibo"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-[#E1306C] text-white rounded-full flex items-center justify-center hover:opacity-90 transition-opacity">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-[#FF0000] text-white rounded-full flex items-center justify-center hover:opacity-90 transition-opacity">
+                                    <i class="fa fa-youtube-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 右侧：地图和表单 -->
+                    <div>
+                        <!-- 位置地图 -->
+                        <div>
+                            <h3 class="text-lg font-bold mb-4">位置地图</h3>
+                            <div class="rounded-lg overflow-hidden shadow-md h-64 md:h-80">
+                                <iframe 
+                                    src="https://j.map.baidu.com/99/_E3?location=22.817003,108.356526&zoom=15&width=100%&height=100%&title=壮锦文化中心&marker=1" 
+                                    width="100%" 
+                                    height="100%" 
+                                    frameborder="0" 
+                                    scrolling="no" 
+                                    marginheight="0" 
+                                    marginwidth="0"
+                                    title="壮锦文化中心位置地图"
+                                    loading="lazy"
+                                ></iframe>
+                            </div>
+                        </div>
+                        
+                        <!-- 联系表单 -->
+                        <div class="mt-12">
+                            <h2 class="text-[clamp(1.5rem,3vw,2rem)] font-bold text-gray-800 mb-8">发送消息</h2>
+                            
+                            <form id="contact-form" class="space-y-6">
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="name" class="block text-gray-700 font-medium mb-2">姓名 *</label>
+                                        <input 
+                                            type="text" 
+                                            id="name" 
+                                            name="name" 
+                                            required
+                                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors"
+                                            placeholder="请输入您的姓名"
+                                        />
+                                    </div>
+                                    
+                                    <div>
+                                        <label for="email" class="block text-gray-700 font-medium mb-2">邮箱 *</label>
+                                        <input 
+                                            type="email" 
+                                            id="email" 
+                                            name="email" 
+                                            required
+                                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors"
+                                            placeholder="请输入您的邮箱"
+                                        />
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label for="phone" class="block text-gray-700 font-medium mb-2">电话</label>
+                                    <input 
+                                        type="tel" 
+                                        id="phone" 
+                                        name="phone" 
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors"
+                                        placeholder="请输入您的电话（选填）"
+                                    />
+                                </div>
+                                
+                                <div>
+                                    <label for="subject" class="block text-gray-700 font-medium mb-2">主题 *</label>
+                                    <select 
+                                        id="subject" 
+                                        name="subject" 
+                                        required
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors appearance-none bg-white"
+                                    >
+                                        <option value="" disabled selected>请选择咨询主题</option>
+                                        <option value="purchase">购买壮锦作品</option>
+                                        <option value="cooperation">商务合作</option>
+                                        <option value="visit">参观预约</option>
+                                        <option value="study">学习壮锦技艺</option>
+                                        <option value="other">其他问题</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label for="message" class="block text-gray-700 font-medium mb-2">留言内容 *</label>
+                                    <textarea 
+                                        id="message" 
+                                        name="message" 
+                                        rows="5" 
+                                        required
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors resize-none"
+                                        placeholder="请输入您的留言内容"
+                                    ></textarea>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <input 
+                                        type="checkbox" 
+                                        id="agreement" 
+                                        name="agreement" 
+                                        required
+                                        class="mt-1 mr-3"
+                                    />
+                                    <label for="agreement" class="text-gray-600 text-sm">
+                                        我同意网站的<a href="#" class="text-primary hover:underline">隐私政策</a>和<a href="#" class="text-primary hover:underline">服务条款</a>
+                                    </label>
+                                </div>
+                                
+                                <button 
+                                    type="submit" 
+                                    class="w-full bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-lg transition-colors transform hover:scale-[1.02] active:scale-[0.98]"
+                                >
+                                    发送消息
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题 -->
+        <section class="py-20 bg-neutral">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-gray-800">常见问题</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mt-4"></div>
+                    <p class="mt-6 text-gray-600 max-w-3xl mx-auto">
+                        以下是访客经常咨询的问题，希望能帮助您快速了解相关信息
+                    </p>
+                </div>
+                
+                <div class="max-w-3xl mx-auto">
+                    <div class="space-y-4">
+                        <!-- 问题1 -->
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none"
+         data-target="#faq-1">
+                                <span class="font-bold text-lg">如何购买壮锦作品？</span>
+                                <i class="fa fa-chevron-down text-gray-500 transition-transform"></i>
+                            </button>
+                            <div 
+ id="faq-1" 
+class="faq-content hidden px-6 pb-6">
+                                <p class="text-gray-600">
+                                    购买壮锦可通过广西产地非遗工坊、民族工艺品店等线下渠道，或淘宝非遗店铺、文创品牌官网等线上平台。也可关注非遗展会、直播带货，或联系传承人定制特殊需求作品。注意区分手工与机织产品，手工品纹理稍不规则、价格较高，机织品图案规整、价格较低。通过正规渠道购买，保留凭证，既能得心仪作品，也能支持工艺传承。
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- 问题2 -->
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none"
+ data-target="#faq-2"
+>
+                                <span class="font-bold text-lg">可以定制专属壮锦作品吗？</span>
+                                <i class="fa fa-chevron-down text-gray-500 transition-transform"></i>
+                            </button>
+                            <div id="faq-2" class="faq-content hidden px-6 pb-6">
+                                <p class="text-gray-600">
+                                    可以定制专属壮锦作品，可联系壮锦传承人或专业工坊沟通需求。定制需明确图案、尺寸等细节，定制周期通常为 1-3 个月。手工价格根据工艺复杂度和尺寸而定，手工定制价值更高。通过正规渠道定制，既能获得独特作品，也能支持传统工艺传承。
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- 问题3 -->
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none"
+data-target="#faq-3"
+>
+                                <span class="font-bold text-lg">如何学习壮锦编织技艺？</span>
+                                <i class="fa fa-chevron-down text-gray-500 transition-transform"></i>
+                            </button>
+                            <div id="faq-3" class="faq-content hidden px-6 pb-6">
+                                <p class="text-gray-600">
+                                    可寻访广西等地的壮锦传承人或非遗工坊，参与线下学徒式培训。也可关注非遗机构开设的短期培训班，系统学习基础技法与图案设计。需从轧棉、纺纱等基础工序学起，反复练习挑花和织造核心技艺。学习需耐心坚持，结合传统工艺的同时，可结合现代审美进行创新实践。
+
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- 问题4 -->
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none"
+data-target="#faq-4">
+                                <span class="font-bold text-lg">壮锦作品如何保养？</span>
+                                <i class="fa fa-chevron-down text-gray-500 transition-transform"></i>
+                            </button>
+                            <div id="faq-4" class="faq-content hidden px-6 pb-6">
+                                <p class="text-gray-600">
+                                    壮锦作品应避免长时间暴露在阳光下，以防褪色。清洁时应用柔软的毛刷轻轻擦拭，或用冷水轻柔手洗，避免机洗和使用洗涤剂。存放时应折叠整齐，放入干燥通风处，可适当放入樟脑丸以防虫蛀。
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- 问题5 -->
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                            <button class="faq-toggle w-full flex items-center justify-between p-6 text-left focus:outline-none"
+data-target="#faq-5">
+                                <span class="font-bold text-lg">现在有壮锦博物馆吗？</span>
+                                <i class="fa fa-chevron-down text-gray-500 transition-transform"></i>
+                            </button>
+                            <div id="faq-5" class="faq-content hidden px-6 pb-6">
+                                <p class="text-gray-600">
+                                  有壮锦专题博物馆，如广西靖西市的壮锦博物馆，系统展示壮锦历史与技艺。广西民族博物馆、广西壮族自治区博物馆等综合场馆也设有壮锦展区。这些场馆通过实物、影像和互动体验，呈现壮锦的发展脉络与文化价值。部分博物馆还会定期举办织锦编织体验活动，方便公众可以近距离感受壮锦魅力。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <img src="images/微信图片3.jpg" alt="壮锦标志" class="h-8 w-auto" />
+                        <!-- 上面是页脚标志图片，可替换为白色版本的标志 -->
+                        <span class="text-xl font-bold">壮锦艺术</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        传承千年的壮族织锦艺术，展现民族文化瑰宝的独特魅力。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-weixin text-xl"></i></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-weibo text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-youtube-play text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">快速链接</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">首页</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">关于壮锦</a></li>
+                        <li><a href="craftsmanship.html" class="text-gray-400 hover:text-white transition-colors">工艺展示</a></li>
+                        <li><a href="patterns.html" class="text-gray-400 hover:text-white transition-colors">图案寓意</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-white transition-colors">作品图库</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">联系我们</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">相关资源</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">壮锦文化研究</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">非遗保护项目</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">传承人介绍</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">学习课程</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">购买渠道</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">联系我们</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker mt-1 mr-3 text-gray-400"></i>
+                            <span class="text-gray-400">黑龙江省牡丹江市爱民区黄花街道文化街191号牡丹江师范学院</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-phone mr-3 text-gray-400"></i>
+                            <span class="text-gray-400">+86 18038001903</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-envelope mr-3 text-gray-400"></i>
+                            <span class="text-gray-400">1757493474@qq.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-clock-o mr-3 text-gray-400"></i>
+                            <span class="text-gray-400">周二至周日 9:00-17:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy;  传承民族文化，保护非物质文化遗产</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+<script>// 在contact.html中添加这段脚本（建议放在</body>结束前）
+document.addEventListener('DOMContentLoaded', function() {
+    // 获取所有FAQ切换按钮
+    const faqToggles = document.querySelectorAll('.faq-toggle');
+    
+    // 为每个按钮添加点击事件
+    faqToggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+            // 获取目标内容的ID
+            const targetId = this.getAttribute('data-target');
+            const targetContent = document.querySelector(targetId);
+            
+            // 切换内容的显示/隐藏状态
+            if (targetContent.classList.contains('hidden')) {
+                targetContent.classList.remove('hidden');
+            } else {
+                targetContent.classList.add('hidden');
+            }
+            
+            // 切换按钮的活跃状态（用于箭头旋转）
+            this.classList.toggle('active');
+        });
+    });
+});</script>
+</body>
+</html>

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>壮锦图案寓意 - 壮族传统织锦艺术</title>
+    <!-- 引入Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- 自定义Tailwind配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#A62928',     // 壮锦常用的红色
+                        secondary: '#E6B85C',   // 壮锦常用的金色
+                        accent: '#2D5D7B',      // 壮锦常用的蓝色
+                        neutral: '#F5F0E8',     // 米白色背景
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-neutral text-gray-800 font-sans">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-md transition-all duration-300">
+        <div class="container mx-auto px-4 py-3">
+            <nav class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-2">
+                                       <span class="text-xl font-bold text-primary">壮锦芳华</span>
+                </a>
+                
+                <!-- 桌面导航 -->
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="index.html" class="font-medium hover:text-primary transition-colors">首页</a></li>
+                    <li><a href="about.html" class="font-medium hover:text-primary transition-colors">关于壮锦</a></li>
+                    <li><a href="craftsmanship.html" class="font-medium hover:text-primary transition-colors">工艺展示</a></li>
+                    <li><a href="patterns.html" class="font-medium text-primary hover:text-accent transition-colors">图案寓意</a></li>
+                    <li><a href="gallery.html" class="font-medium hover:text-primary transition-colors">作品图库</a></li>
+                    <li><a href="contact.html" class="font-medium hover:text-primary transition-colors">联系我们</a></li>
+                </ul>
+                
+                <!-- 移动端菜单按钮 -->
+                <button id="menuToggle" class="md:hidden text-gray-700 focus:outline-none">
+                    <i class="fa fa-bars text-2xl"></i>
+                </button>
+            </nav>
+            
+            <!-- 移动端导航菜单 -->
+            <div id="mobileMenu" class="md:hidden hidden mt-4 pb-2">
+                <ul class="space-y-3">
+                    <li><a href="index.html" class="block font-medium hover:text-primary transition-colors">首页</a></li>
+                    <li><a href="about.html" class="block font-medium hover:text-primary transition-colors">关于壮锦</a></li>
+                    <li><a href="craftsmanship.html" class="block font-medium hover:text-primary transition-colors">工艺展示</a></li>
+                    <li><a href="patterns.html" class="block font-medium text-primary hover:text-accent transition-colors">图案寓意</a></li>
+                    <li><a href="gallery.html" class="block font-medium hover:text-primary transition-colors">作品图库</a></li>
+                    <li><a href="contact.html" class="block font-medium hover:text-primary transition-colors">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 页面标题区域 -->
+        <section class="relative py-20 bg-gray-800 text-white">
+            <div class="absolute inset-0 opacity-30">
+                <img 
+                    src="images/微信图片37.jpg"
+                    alt="壮锦图案背景" 
+                    class="w-full h-full object-cover"
+                />
+                <!-- 上面是图案页面的背景图片，可替换为展示壮锦图案的图片 -->
+            </div>
+            <div class="container mx-auto px-4 relative z-10">
+                <h1 class="text-[clamp(2rem,5vw,3rem)] font-bold mb-4">壮锦图案与寓意</h1>
+                <p class="text-lg opacity-90 max-w-3xl">探索壮锦中精美图案的文化内涵和象征意义</p>
+            </div>
+        </section>
+
+        <!-- 图案概述 -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-gray-800">壮锦纹样数据库</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mt-4"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <img 
+                            src="images/微信图片1.jpg"
+                            alt="壮锦图案概览" 
+                            class="w-full h-auto rounded-lg shadow-xl"
+                        />
+                        <!-- 上面是壮锦图案概览图片，可替换为展示多种壮锦图案的图片 -->
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-bold text-primary mb-4">图案中的文化密码</h3>
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            壮锦的图案是壮族文化的重要载体，每一种图案都蕴含着特定的文化内涵和象征意义，反映了壮族人民的生活环境、生产方式、宗教信仰和审美观念。
+                        </p>
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            壮锦图案可分为几何纹样、动植物纹样和人物生活纹样三大类，其中以几何纹样最为常见。这些图案不仅美观大方，还承载着壮族人民对美好生活的向往和祝福。
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            壮锦图案的构图严谨有序，多采用对称、重复等手法，形成富有节奏感和韵律感的画面。色彩上以红、黄、蓝、绿为基本色，对比强烈而和谐，体现了壮族人民热情奔放的性格。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 几何纹样 -->
+        <section class="py-20 bg-neutral">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-gray-800">几何纹样</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mt-4"></div>
+                    <p class="mt-6 text-gray-600 max-w-3xl mx-auto">
+                        几何纹样是壮锦中最常见的图案类型，形式多样，寓意丰富
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- 几何纹样1 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                        <img 
+                            src="images/图片2.jpg"
+                            alt="壮锦几何纹样：菱形纹" 
+                            class="w-full h-64 object-cover object-center"
+                        />
+                        <!-- 上面是菱形纹图案图片，可替换为实际的图案图片 -->
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">菱形纹</h3>
+                            <p class="text-gray-600 mb-3">
+                                菱形纹是壮锦中最具代表性的图案之一，常由多个菱形交错连接而成。
+                            </p>
+                            <div class="flex items-center text-accent">
+                                <i class="fa fa-lightbulb-o mr-2"></i>
+                                <span class="font-medium">寓意：吉祥如意、富贵双全</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 几何纹样2 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                        <img 
+                            src="images/图片3.jpg"
+                            alt="壮锦几何纹样：回形纹" 
+                            class="w-full h-64 object-cover object-center"
+                        />
+                        <!-- 上面是回形纹图案图片，可替换为实际的图案图片 -->
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">回形纹</h3>
+                            <p class="text-gray-600 mb-3">
+                                回字纹，又称回形纹，由连续的折线组成，形似"回"字，连绵不断。
+                            </p>
+                            <div class="flex items-center text-accent">
+                                <i class="fa fa-lightbulb-o mr-2"></i>
+                                <span class="font-medium">寓意：生生不息、富贵不断</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 几何纹样3 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                        <img 
+                            src="images/图片4.jpg"
+                            alt="壮锦几何纹样：水波纹" 
+                            class="w-full h-64 object-cover object-center"
+                        />
+                        <!-- 上面是水波纹图案图片，可替换为实际的图案图片 -->
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">八角纹</h3>
+                            <p class="text-gray-600 mb-3">
+                               八角纹，模拟太阳的辐射装，象征着温暖和光明。
+寓意：八面纳吉，富足安康。
+                            </p>
+                            <div class="flex items-center text-accent">
+                                <i class="fa fa-lightbulb-o mr-2"></i>
+                                <span class="font-medium">寓意：财源滚滚、生生不息</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 动植物纹样 -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-gray-800">动植物纹样</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mt-4"></div>
+                    <p class="mt-6 text-gray-600 max-w-3xl mx-auto">
+                        动植物纹样源于壮族人民的生活环境，寄托了人们对自然的敬畏和对美好生活的向往
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-x-12 gap-y-16">
+                    <!-- 动物纹样1 -->
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="md:w-1/3">
+                            <img 
+                                src="images/图片5.jpg"
+                                alt="壮锦动物纹样：蝴蝶纹" 
+                                class="w-full h-auto rounded-lg shadow-lg"
+                            />
+                            <!-- 上面是凤凰纹图案图片，可替换为实际的图案图片 -->
+                        </div>
+                        <div class="md:w-2/3">
+                            <h3 class="text-xl font-bold mb-3">蝴蝶纹</h3>
+                            <p class="text-gray-600 mb-3">
+                                蝴蝶是自然界中忠贞的代表，通常以“双宿双飞”的形象出现。蝴蝶花纹在壮锦中很常见，体现了恋人之间对爱情的美好寄托，饱含了对家庭生活幸福美满的追求。壮乡方言中“蝴蝶”和“福叠”谐音，有“福气连绵不绝”的美好寓意；同时，蝴蝶高产多子的特点正迎合了古时人们对多子多福的期盼。
+                            </p>
+                            <div class="flex items-center text-accent">
+                                <i class="fa fa-lightbulb-o mr-2"></i>
+                                <span class="font-medium">寓意：吉祥美满、爱情象征</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 动物纹样2 -->
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="md:w-1/3">
+                            <img 
+                                src="images/图片6.jpg"
+                                alt="壮锦动物纹样：龙纹" 
+                                class="w-full h-auto rounded-lg shadow-lg"
+                            />
+                            <!-- 上面是龙纹图案图片，可替换为实际的图案图片 -->
+                        </div>
+                        <div class="md:w-2/3">
+                            <h3 class="text-xl font-bold mb-3">蛙纹</h3>
+                            <p class="text-gray-600 mb-3">
+                                蛙图腾是壮族“稻作文化”和“生殖崇拜”的代表符号。在壮族先民看来，青蛙是雨的“使者”，其鸣叫是下雨的前兆，又被视为“铜鼓精”，象征风调雨顺、五谷丰登、人畜兴旺。又因蛙的繁殖能力很强，产子繁多，由此人们将蛙纹绣在服饰包被上来祈求子孙兴旺、庇佑孩童成长。
+                            </p>
+                            <div class="flex items-center text-accent">
+                                <i class="fa fa-lightbulb-o mr-2"></i>
+                                <span class="font-medium">寓意：多子多福、丰收吉兆</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 植物纹样1 -->
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="md:w-1/3">
+                            <img 
+                                src="images/图片7.jpg"
+                                alt="壮锦植物纹样：牡丹纹" 
+                                class="w-full h-auto rounded-lg shadow-lg"
+                            />
+                            <!-- 上面是牡丹纹图案图片，可替换为实际的图案图片 -->
+                        </div>
+                        <div class="md:w-2/3">
+                            <h3 class="text-xl font-bold mb-3">菊花纹</h3>
+                            <p class="text-gray-600 mb-3">
+                               在汉语语境中，“菊” 与 “吉” 发音相近，因此菊花纹在壮锦中被赋予了 “吉花” 的寓意，象征着 “吉祥之花”。壮锦中的菊花纹花瓣多为放射状排列，中心花蕊饱满，线条流畅而富有张力。花瓣的多层环绕象征家族兴旺、子孙满堂，中心的花蕊则寓意核心福祉的凝聚。
+                            </p>
+                            <div class="flex items-center text-accent">
+                                <i class="fa fa-lightbulb-o mr-2"></i>
+                                <span class="font-medium">寓意：高洁坚韧、长寿吉祥</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 植物纹样2 -->
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="md:w-1/3">
+                            <img 
+                                src="images/图片8.jpg"
+                                alt="壮锦植物纹样：稻穗纹" 
+                                class="w-full h-auto rounded-lg shadow-lg"
+                            />
+                            <!-- 上面是稻穗纹图案图片，可替换为实际的图案图片 -->
+                        </div>
+                        <div class="md:w-2/3">
+                            <h3 class="text-xl font-bold mb-3">荷花纹</h3>
+                            <p class="text-gray-600 mb-3">
+                              荷花“出淤泥不染”契合婴儿的至纯本性；莲蓬多籽的特性，在壮族民俗中承载“子嗣绵延”的吉祥寓意。莲花在传统文化中是吉祥花，表达“连（莲）年有余” “和合美满”等美好祝愿。
+                            </p>
+                            <div class="flex items-center text-accent">
+                                <i class="fa fa-lightbulb-o mr-2"></i>
+                                <span class="font-medium">寓意：纯洁高尚、和睦吉祥</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 生活场景纹样 -->
+        <section class="py-20 bg-neutral">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-gray-800">生活场景纹样</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mt-4"></div>
+                    <p class="mt-6 text-gray-600 max-w-3xl mx-auto">
+                        生活场景纹样反映了壮族人民的生产生活和节庆活动，是壮族文化的生动记录
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold text-primary mb-4">图案中的壮族生活</h3>
+                        <p class="text-gray-700 mb-6 leading-relaxed">
+                            生活场景纹样是壮锦中最具故事性的图案类型，它们以写实的手法描绘了壮族人民的生产劳动、节庆活动、婚恋习俗等生活场景，是研究壮族社会文化的重要资料。
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-bold text-lg mb-2 flex items-center">
+                                    <i class="fa fa-users text-primary mr-2"></i>
+                                    节庆活动纹样
+                                </h4>
+                                <p class="text-gray-600 pl-6">
+                                    描绘壮族传统节日如三月三、春节等的庆祝场景，人们载歌载舞，热闹非凡，体现了壮族人民热爱生活、团结欢乐的民族性格。
+                                </p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-bold text-lg mb-2 flex items-center">
+                                    <i class="fa fa-pagelines text-primary mr-2"></i>
+                                    生产劳动纹样
+                                </h4>
+                                <p class="text-gray-600 pl-6">
+                                    反映壮族人民农耕、渔猎、纺织等生产劳动场景，体现了壮族人民勤劳朴实的品质和对丰收的期盼。
+                                </p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-bold text-lg mb-2 flex items-center">
+                                    <i class="fa fa-heart text-primary mr-2"></i>
+                                    婚恋习俗纹样
+                                </h4>
+                                <p class="text-gray-600 pl-6">
+                                    描绘壮族青年男女相恋、婚嫁的场景，体现了壮族独特的婚恋习俗和对美好爱情的追求。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <img 
+                            src="images/图片9.jpg"
+                            alt="壮锦生活场景纹样" 
+                            class="w-full h-auto rounded-lg shadow-xl"
+                        />
+                        <!-- 上面是生活场景纹样图片，可替换为实际的图案图片 -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 图案寓意图解 -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-gray-800">图案寓意图解</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mt-4"></div>
+                    <p class="mt-6 text-gray-600 max-w-3xl mx-auto">
+                        通过图解了解壮锦图案中常见的吉祥寓意组合
+                    </p>
+                </div>
+                
+                <div class="bg-neutral p-8 rounded-xl shadow-lg">
+                    <img 
+                        src="images/图片10.jpg"
+                        alt="壮锦图案寓意图解" 
+                        class="w-full h-auto rounded-lg mb-6"
+                    />
+                    <!-- 上面是图案寓意图解图片，可替换为实际的图解图片 -->
+                    <p class="text-gray-600 text-center">
+                        壮锦图案常采用多种纹样组合，形成更加丰富的寓意。例如，凤凰与牡丹组合象征"富贵吉祥"，龙与凤组合象征"龙凤呈祥"，这些组合图案在婚嫁等喜庆场合尤为常见。
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <img src="images/微信图片3.jpg" alt="壮锦标志" class="h-8 w-auto" />
+                        <!-- 上面是页脚标志图片，可替换为白色版本的标志 -->
+                        <span class="text-xl font-bold">壮锦艺术</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        传承千年的壮族织锦艺术，展现民族文化瑰宝的独特魅力。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-weixin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-weibo text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-youtube-play text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">快速链接</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">首页</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">关于壮锦</a></li>
+                        <li><a href="craftsmanship.html" class="text-gray-400 hover:text-white transition-colors">工艺展示</a></li>
+                        <li><a href="patterns.html" class="text-gray-400 hover:text-white transition-colors">图案寓意</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-white transition-colors">作品图库</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">联系我们</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">相关资源</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">壮锦文化研究</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">非遗保护项目</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">传承人介绍</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">学习课程</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">购买渠道</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">联系我们</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker mt-1 mr-3 text-gray-400"></i>
+                            <span class="text-gray-400">黑龙江省牡丹江市爱民区黄花街道文化街191号牡丹江师范学院</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-phone mr-3 text-gray-400"></i>
+                            <span class="text-gray-400">+86 18038001903</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-envelope mr-3 text-gray-400"></i>
+                            <span class="text-gray-400">1757493474@qq.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-clock-o mr-3 text-gray-400"></i>
+                            <span class="text-gray-400">周二至周日 9:00-17:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 传承民族文化，保护非物质文化遗产</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

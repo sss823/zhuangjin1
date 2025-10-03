@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于壮锦 - 壮族传统织锦艺术</title>
+    <!-- 引入Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- 自定义Tailwind配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#A62928',     // 壮锦常用的红色
+                        secondary: '#E6B85C',   // 壮锦常用的金色
+                        accent: '#2D5D7B',      // 壮锦常用的蓝色
+                        neutral: '#F5F0E8',     // 米白色背景
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-neutral text-gray-800 font-sans">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-md transition-all duration-300">
+        <div class="container mx-auto px-4 py-3">
+            <nav class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-2">
+                                                        <span class="text-xl font-bold text-primary">壮锦芳华</span>
+                </a>
+                
+                <!-- 桌面导航 -->
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="index.html" class="font-medium hover:text-primary transition-colors">首页</a></li>
+                    <li><a href="about.html" class="font-medium text-primary hover:text-accent transition-colors">关于壮锦</a></li>
+                    <li><a href="craftsmanship.html" class="font-medium hover:text-primary transition-colors">工艺展示</a></li>
+                    <li><a href="patterns.html" class="font-medium hover:text-primary transition-colors">图案寓意</a></li>
+                    <li><a href="gallery.html" class="font-medium hover:text-primary transition-colors">作品图库</a></li>
+                    <li><a href="contact.html" class="font-medium hover:text-primary transition-colors">联系我们</a></li>
+                </ul>
+                
+                <!-- 移动端菜单按钮 -->
+                <button id="menuToggle" class="md:hidden text-gray-700 focus:outline-none">
+                    <i class="fa fa-bars text-2xl"></i>
+                </button>
+            </nav>
+            
+            <!-- 移动端导航菜单 -->
+            <div id="mobileMenu" class="md:hidden hidden mt-4 pb-2">
+                <ul class="space-y-3">
+                    <li><a href="index.html" class="block font-medium hover:text-primary transition-colors">首页</a></li>
+                    <li><a href="about.html" class="block font-medium text-primary hover:text-accent transition-colors">关于壮锦</a></li>
+                    <li><a href="craftsmanship.html" class="block font-medium hover:text-primary transition-colors">工艺展示</a></li>
+                    <li><a href="patterns.html" class="block font-medium hover:text-primary transition-colors">图案寓意</a></li>
+                    <li><a href="gallery.html" class="block font-medium hover:text-primary transition-colors">作品图库</a></li>
+                    <li><a href="contact.html" class="block font-medium hover:text-primary transition-colors">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 页面标题区域 -->
+        <section class="relative py-20 bg-gray-800 text-white">
+            <div class="absolute inset-0 opacity-30">
+                <img 
+                    src="images/微信图片27.jpg"
+                    alt="壮锦背景" 
+                    class="w-full h-full object-cover"
+                />
+                <!-- 上面是关于页面的背景图片，可替换为合适的壮锦背景图 -->
+            </div>
+            <div class="container mx-auto px-4 relative z-10">
+                <h1 class="text-[clamp(2rem,5vw,3rem)] font-bold mb-4">关于壮锦</h1>
+                <p class="text-lg opacity-90 max-w-3xl">探索壮锦的悠久历史、文化意义和在当代的传承与发展</p>
+            </div>
+        </section>
+
+        <!-- 历史渊源 -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-gray-800">壮锦的历史渊源</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mt-4"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <img 
+                            src="images/微信图片22.jpg"
+                            alt="壮锦历史图片" 
+                            class="w-full h-auto rounded-lg shadow-xl"
+                        />
+                        <!-- 上面是壮锦历史相关图片，可替换为展示壮锦历史的图片 -->
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-bold text-primary mb-4">千年传承的织锦艺术</h3>
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            壮锦的历史可以追溯到宋代，最早的文献记载见于《宋史·舆服志》，当时壮锦就已作为贡品进入宫廷。
+                        </p>
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            在明清时期，壮锦的生产达到鼎盛，成为壮族人民重要的家庭手工业和贸易商品。当时的壮锦不仅在国内享有盛名，还通过海上丝绸之路远销东南亚等地。
+                        </p>
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            20世纪以来，随着工业化的发展，传统壮锦工艺曾一度衰落。但在政府和文化界的重视下，壮锦织造技艺得到了保护和传承。
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            2006年，壮锦织造技艺被列入第一批国家级非物质文化遗产名录，成为中华民族珍贵的文化瑰宝。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 文化意义 -->
+        <section class="py-20 bg-neutral">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-gray-800">壮锦的文化意义</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mt-4"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                            <i class="fa fa-users text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">民族身份象征</h3>
+                        <p class="text-gray-600">
+                            壮锦是壮族文化的重要组成部分，是壮族人民身份认同的象征。它承载着壮族的历史记忆、生活智慧和审美情趣，是壮族文化传承的重要载体。
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                            <i class="fa fa-heart text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">生活与仪式</h3>
+                        <p class="text-gray-600">
+                            在壮族传统社会中，壮锦不仅是日常生活用品，也是重要的礼仪用品。在婚嫁、节庆等重要场合，壮锦常被用作礼品或装饰，象征着吉祥、幸福和美好祝愿。
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                            <i class="fa fa-globe text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">文化交流桥梁</h3>
+                        <p class="text-gray-600">
+                            壮锦作为广西壮族文化的代表性手工艺品，是对外文化交流的重要桥梁。它以独特的艺术魅力向世界展示了中国少数民族文化的多样性和创造力。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 现代传承 -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-gray-800">壮锦的现代传承与创新</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mt-4"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold text-primary mb-4">传统与现代的融合</h3>
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            在当代，壮锦正经历着新的发展机遇。年轻一代的设计师和工匠们在继承传统工艺的基础上，不断创新，将壮锦元素融入现代设计中。
+                        </p>
+                        <p class="text-gray-700 mb-6 leading-relaxed">
+                            如今，壮锦已不再局限于传统的被面、壁挂等形式，而是扩展到服装、配饰、家居装饰等多个领域，受到越来越多消费者的喜爱。
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 p-2 rounded-full mr-4 mt-1">
+                                    <i class="fa fa-check text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">政府支持与保护</h4>
+                                    <p class="text-gray-600">各级政府出台多项政策支持壮锦技艺的传承与发展，建立了多个壮锦文化传习基地。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 p-2 rounded-full mr-4 mt-1">
+                                    <i class="fa fa-check text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">传承人培养</h4>
+                                    <p class="text-gray-600">通过拜师学艺、举办培训班等方式，培养了一批年轻的壮锦技艺传承人。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 p-2 rounded-full mr-4 mt-1">
+                                    <i class="fa fa-check text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">设计创新</h4>
+                                    <p class="text-gray-600">与现代设计师合作，将壮锦元素与时尚设计相结合，推出符合现代审美的新产品。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <img 
+                            src="images/微信图片23.jpg"
+                            alt="现代壮锦设计" 
+                            class="w-full h-auto rounded-lg shadow-xl"
+                        />
+                        <!-- 上面是现代壮锦设计图片，可替换为展示现代壮锦应用的图片 -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 传承人与大师 -->
+        <section class="py-20 bg-neutral">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-gray-800">壮锦传承人与大师</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mt-4"></div>
+                    <p class="mt-6 text-gray-600 max-w-3xl mx-auto">
+                        正是这些匠人的坚守与创新，让壮锦艺术在新时代焕发出新的生机
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- 传承人1 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                        <img 
+                            src="images/微信图片24.jpg"
+                            alt="壮锦大师：谭湘光老师" 
+                            class="w-full h-64 object-cover object-center"
+                        />
+                        <!-- 上面是传承人图片1，可替换为实际的传承人照片 -->
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">谭湘光老师</h3>
+                            <p class="text-primary font-medium mb-4"> 中国织锦工艺大师、中国工艺美术大师</p>
+                            <p class="text-gray-600">
+                               创立并管理壮锦民间手工作坊长阳民族文化研究会会员。2022年2月，被评为2021年“广西工匠”。
+
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 传承人2 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                        <img 
+                            src="images/微信图片25.jpg" 
+                            alt="壮锦大师：***老师" 
+                            class="w-full h-64 object-cover object-center"
+                        />
+                        <!-- 上面是传承人图片2，可替换为实际的传承人照片 -->
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">李村灵老师</h3>
+                            <p class="text-primary font-medium mb-4">壮族织锦技艺的国家级非遗传承人</p>
+                            <p class="text-gray-600">
+                               	设计了非遗壮锦“回纹鞠华锦”，以传统技法结合现代机织工艺，采用大地色系配色，纹样包含菊花（象征高洁长寿）和回纹（寓意福运循环）。创作《越风系列壁挂》获第五届亚太博览会银奖。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 传承人3 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                        <img 
+                            src="images/微信图片26.jpg"
+                            alt="壮锦大师：***老师" 
+                            class="w-full h-64 object-cover object-center"
+                        />
+                        <!-- 上面是传承人图片3，可替换为实际的传承人照片 -->
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">兰培文老师</h3>
+                            <p class="text-primary font-medium mb-4">广西来宾市忻城壮族织锦技艺代表性传承人</p>
+                            <p class="text-gray-600">
+                                他以山歌为媒推广壮锦文化，带动当地织娘致富，并让这一传统非遗走向国际。2024年，他入选全国“诚信之星”。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <img src="images/微信图片3.jpg" alt="壮锦标志" class="h-8 w-auto" />
+                        <!-- 上面是页脚标志图片，可替换为白色版本的标志 -->
+                        <span class="text-xl font-bold">壮锦艺术</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        传承千年的壮族织锦艺术，展现民族文化瑰宝的独特魅力。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-weixin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-weibo text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-youtube-play text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">快速链接</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">首页</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">关于壮锦</a></li>
+                        <li><a href="craftsmanship.html" class="text-gray-400 hover:text-white transition-colors">工艺展示</a></li>
+                        <li><a href="patterns.html" class="text-gray-400 hover:text-white transition-colors">图案寓意</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-white transition-colors">作品图库</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">联系我们</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">相关资源</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">壮锦文化研究</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">非遗保护项目</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">传承人介绍</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">学习课程</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">购买渠道</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">联系我们</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker mt-1 mr-3 text-gray-400"></i>
+                            <span class="text-gray-400">黑龙江省牡丹江市爱民区黄花街道文化街191号牡丹江师范学院</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-phone mr-3 text-gray-400"></i>
+                            <span class="text-gray-400">+86 18038001903</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-envelope mr-3 text-gray-400"></i>
+                            <span class="text-gray-400">1757493474@qq.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 传承民族文化，保护非物质文化遗产</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

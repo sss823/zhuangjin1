@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>壮锦作品图库 - 壮族传统织锦艺术</title>
+    <!-- 引入Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- 自定义Tailwind配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#A62928',     // 壮锦常用的红色
+                        secondary: '#E6B85C',   // 壮锦常用的金色
+                        accent: '#2D5D7B',      // 壮锦常用的蓝色
+                        neutral: '#F5F0E8',     // 米白色背景
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-neutral text-gray-800 font-sans">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-md transition-all duration-300">
+        <div class="container mx-auto px-4 py-3">
+            <nav class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-2">
+                                     <span class="text-xl font-bold text-primary">壮锦芳华</span>
+                </a>
+                
+                <!-- 桌面导航 -->
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="index.html" class="font-medium hover:text-primary transition-colors">首页</a></li>
+                    <li><a href="about.html" class="font-medium hover:text-primary transition-colors">关于壮锦</a></li>
+                    <li><a href="craftsmanship.html" class="font-medium hover:text-primary transition-colors">工艺展示</a></li>
+                    <li><a href="patterns.html" class="font-medium hover:text-primary transition-colors">图案寓意</a></li>
+                    <li><a href="gallery.html" class="font-medium text-primary hover:text-accent transition-colors">作品图库</a></li>
+                    <li><a href="contact.html" class="font-medium hover:text-primary transition-colors">联系我们</a></li>
+                </ul>
+                
+                <!-- 移动端菜单按钮 -->
+                <button id="menuToggle" class="md:hidden text-gray-700 focus:outline-none">
+                    <i class="fa fa-bars text-2xl"></i>
+                </button>
+            </nav>
+            
+            <!-- 移动端导航菜单 -->
+            <div id="mobileMenu" class="md:hidden hidden mt-4 pb-2">
+                <ul class="space-y-3">
+                    <li><a href="index.html" class="block font-medium hover:text-primary transition-colors">首页</a></li>
+                    <li><a href="about.html" class="block font-medium hover:text-primary transition-colors">关于壮锦</a></li>
+                    <li><a href="craftsmanship.html" class="block font-medium hover:text-primary transition-colors">工艺展示</a></li>
+                    <li><a href="patterns.html" class="block font-medium hover:text-primary transition-colors">图案寓意</a></li>
+                    <li><a href="gallery.html" class="block font-medium text-primary hover:text-accent transition-colors">作品图库</a></li>
+                    <li><a href="contact.html" class="block font-medium hover:text-primary transition-colors">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 页面标题区域 -->
+        <section class="relative py-20 bg-gray-800 text-white">
+            <div class="absolute inset-0 opacity-30">
+                <img 
+                    src="images/微信图片35.jpg"
+                    alt="壮锦作品图库背景" 
+                    class="w-full h-full object-cover"
+                />
+                <!-- 上面是作品图库页面的背景图片，可替换为展示壮锦作品的图片 -->
+            </div>
+            <div class="container mx-auto px-4 relative z-10">
+                <h1 class="text-[clamp(2rem,5vw,3rem)] font-bold mb-4">壮锦作品图库</h1>
+                <p class="text-lg opacity-90 max-w-3xl">欣赏精美的壮锦艺术作品，感受传统工艺的魅力</p>
+            </div>
+        </section>
+
+        <!-- 作品分类 -->
+        <section class="py-12 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button class="gallery-filter active px-6 py-2 rounded-full bg-primary text-white font-medium" data-filter="all">
+                        全部作品
+                    </button>
+                    <button class="gallery-filter px-6 py-2 rounded-full bg-gray-200 hover:bg-gray-300 font-medium transition-colors" data-filter="traditional">
+                        传统作品
+                    </button>
+                    <button class="gallery-filter px-6 py-2 rounded-full bg-gray-200 hover:bg-gray-300 font-medium transition-colors" data-filter="modern">
+                        现代创新
+                    </button>
+                    <button class="gallery-filter px-6 py-2 rounded-full bg-gray-200 hover:bg-gray-300 font-medium transition-colors" data-filter="clothing">
+                        服饰用品
+                    </button>
+                    <button class="gallery-filter px-6 py-2 rounded-full bg-gray-200 hover:bg-gray-300 font-medium transition-colors" data-filter="decorative">
+                        装饰摆件
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 作品展示 -->
+        <section class="py-16 bg-neutral">
+            <div class="container mx-auto px-4">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- 作品1 -->
+                    <div class="gallery-item traditional decorative" data-category="traditional decorative">
+                        <div class="bg-white rounded-lg overflow-hidden shadow-lg group">
+                            <div class="relative overflow-hidden">
+                                <img 
+                                    src="images/微信图片2.jpg"
+                                    alt="传统壮锦挂毯" 
+                                    class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+                                />
+                                <!-- 上面是传统壮锦挂毯图片，可替换为实际作品图片 -->
+                                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <button class="view-details bg-white text-primary font-medium py-2 px-4 rounded-lg transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                                        查看详情
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">凤凰朝阳挂毯</h3>
+                                <p class="text-gray-600 mb-3">传统工艺制作，以凤凰朝阳为主题，寓意吉祥如意</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-500">清代风格复刻</span>
+                                    <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">传统作品</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 作品2 -->
+                    <div class="gallery-item modern clothing" data-category="modern clothing">
+                        <div class="bg-white rounded-lg overflow-hidden shadow-lg group">
+                            <div class="relative overflow-hidden">
+                                <img 
+                                    src="images/微信图片5.jpg"
+                                    alt="现代壮锦连衣裙" 
+                                    class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+                                />
+                                <!-- 上面是现代壮锦连衣裙图片，可替换为实际作品图片 -->
+                                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <button class="view-details bg-white text-primary font-medium py-2 px-4 rounded-lg transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                                        查看详情
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">几何纹连衣裙</h3>
+                                <p class="text-gray-600 mb-3">现代设计结合传统壮锦元素，时尚与传统的完美融合</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-500">现代设计</span>
+                                    <span class="px-3 py-1 bg-secondary/10 text-secondary text-sm rounded-full">现代创新</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 作品3 -->
+                    <div class="gallery-item traditional decorative" data-category="traditional decorative">
+                        <div class="bg-white rounded-lg overflow-hidden shadow-lg group">
+                            <div class="relative overflow-hidden">
+                                <img 
+                                    src="images/微信图片6.jpg"
+                                    alt="壮锦靠垫套" 
+                                    class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+                                />
+                                <!-- 上面是壮锦靠垫套图片，可替换为实际作品图片 -->
+                                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <button class="view-details bg-white text-primary font-medium py-2 px-4 rounded-lg transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                                        查看详情
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">回形纹靠垫套</h3>
+                                <p class="text-gray-600 mb-3">采用传统回形纹图案，寓意富贵不断，生生不息</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-500">实用装饰品</span>
+                                    <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">传统作品</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 作品4 -->
+                    <div class="gallery-item modern decorative" data-category="modern decorative">
+                        <div class="bg-white rounded-lg overflow-hidden shadow-lg group">
+                            <div class="relative overflow-hidden">
+                                <img 
+                                    src="images/微信图片7.jpg"
+                                    alt="壮锦装饰画" 
+                                    class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+                                />
+                                <!-- 上面是壮锦装饰画图片，可替换为实际作品图片 -->
+                                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <button class="view-details bg-white text-primary font-medium py-2 px-4 rounded-lg transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                                        查看详情
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">色块抽象装饰画</h3>
+                                <p class="text-gray-600 mb-3">现代抽象风格，融合壮锦色彩元素，适合现代家居</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-500">艺术装饰</span>
+                                    <span class="px-3 py-1 bg-secondary/10 text-secondary text-sm rounded-full">现代创新</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 作品5 -->
+                    <div class="gallery-item traditional clothing" data-category="traditional clothing">
+                        <div class="bg-white rounded-lg overflow-hidden shadow-lg group">
+                            <div class="relative overflow-hidden">
+                                <img 
+                                    src="images/微信图片8.jpg"
+                                    alt="壮锦传统服饰" 
+                                    class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+                                />
+                                <!-- 上面是壮锦传统服饰图片，可替换为实际作品图片 -->
+                                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <button class="view-details bg-white text-primary font-medium py-2 px-4 rounded-lg transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                                        查看详情
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">壮族传统嫁衣</h3>
+                                <p class="text-gray-600 mb-3">传统壮族新娘服饰，手工织造，象征幸福美满</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-500">婚庆服饰</span>
+                                    <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">传统作品</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 作品6 -->
+                    <div class="gallery-item modern decorative" data-category="modern decorative">
+                        <div class="bg-white rounded-lg overflow-hidden shadow-lg group">
+                            <div class="relative overflow-hidden">
+                                <img 
+                                    src="images/微信图片9.jpg"
+                                    alt="壮锦图案台灯" 
+                                    class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+                                />
+                                <!-- 上面是壮锦图案台灯图片，可替换为实际作品图片 -->
+                                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <button class="view-details bg-white text-primary font-medium py-2 px-4 rounded-lg transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                                        查看详情
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">壮锦图案台灯</h3>
+                                <p class="text-gray-600 mb-3">现代家居用品，灯罩采用壮锦纹样，兼具实用性与艺术性</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-500">实用艺术品</span>
+                                    <span class="px-3 py-1 bg-secondary/10 text-secondary text-sm rounded-full">现代创新</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 加载更多按钮 -->
+                <div class="mt-12 text-center">
+                    <button id="load-more" class="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white font-medium py-3 px-8 rounded-lg transition-colors">
+                        加载更多作品
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 作品详情模态框 -->
+        <div id="作品详情模态框" class="fixed inset-0 z-50 flex items-center justify-center hidden">
+            <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" id="modal-overlay"></div>
+            <div class="relative bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-auto m-4">
+                <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 z-10">
+                    <i class="fa fa-times text-2xl"></i>
+                </button>
+                <div class="grid md:grid-cols-2">
+                    <div class="bg-gray-100 p-4">
+                        <img id="modal-image" src="images/gallery-item1.jpg" alt="作品详情图" class="w-full h-auto" />
+                        <!-- 图片将通过JavaScript动态替换 -->
+                    </div>
+                    <div class="p-8">
+                        <h3 id="modal-title" class="text-2xl font-bold mb-4">凤凰朝阳挂毯</h3>
+                        <div class="flex items-center mb-6">
+                            <span id="modal-category" class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">传统作品</span>
+                            <span class="mx-3 text-gray-300">|</span>
+                            <span id="modal-year" class="text-gray-600">清代风格复刻</span>
+                        </div>
+                        <div class="mb-6">
+                            <h4 class="font-bold mb-2">作品简介</h4>
+                            <p id="modal-description" class="text-gray-600">
+                                这件凤凰朝阳挂毯采用传统壮锦工艺制作，以凤凰朝阳为主题，寓意吉祥如意、光明普照。作品色彩鲜艳，线条流畅，展现了壮族织锦艺人的高超技艺。
+                            </p>
+                        </div>
+                        <div class="mb-6">
+                            <h4 class="font-bold mb-2">工艺特点</h4>
+                            <ul id="modal-features" class="text-gray-600 space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                                    <span>采用传统"通经断纬"技法</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                                    <span>使用天然植物染料染色</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
+                                    <span>手工编织，耗时3个月完成</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-8">
+                            <a href="contact.html" class="inline-block bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-lg transition-colors">
+                                咨询购买
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <img src="images/微信图片3.jpg" alt="壮锦标志" class="h-8 w-auto" />
+                        <!-- 上面是页脚标志图片，可替换为白色版本的标志 -->
+                        <span class="text-xl font-bold">壮锦艺术</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        传承千年的壮族织锦艺术，展现民族文化瑰宝的独特魅力。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-weixin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-weibo text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-youtube-play text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">快速链接</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">首页</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">关于壮锦</a></li>
+                        <li><a href="craftsmanship.html" class="text-gray-400 hover:text-white transition-colors">工艺展示</a></li>
+                        <li><a href="patterns.html" class="text-gray-400 hover:text-white transition-colors">图案寓意</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-white transition-colors">作品图库</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">联系我们</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">相关资源</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">壮锦文化研究</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">非遗保护项目</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">传承人介绍</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">学习课程</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">购买渠道</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">联系我们</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker mt-1 mr-3 text-gray-400"></i>
+                            <span class="text-gray-400">黑龙江省牡丹江市爱民区黄花街道文化街191号牡丹江师范学院</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-phone mr-3 text-gray-400"></i>
+                            <span class="text-gray-400">+86 18038001903</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-envelope mr-3 text-gray-400"></i>
+                            <span class="text-gray-400">1757493474@qq.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-clock-o mr-3 text-gray-400"></i>
+                            <span class="text-gray-400">周二至周日 9:00-17:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 传承民族文化，保护非物质文化遗产</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/gallery.js"></script>
+</body>
+</html>
